@@ -171,14 +171,9 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-    let firstFound = false;
-    const filteredArray = arr.filter( function(element) {
-        if((!firstFound) && element[key] === searchValue) {
-            firstFound = true;
-            return true;
-        } 
-        return false;
-    });
+    return arr.filter( function(element) {
+        return element[key] === searchValue
+    })[0];
     return filteredArray[0];
 }
 
